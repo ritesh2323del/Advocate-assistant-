@@ -45,6 +45,8 @@
     <title>Advocate Assistant</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+            <link rel="manifest" href="/Advocate-assistant-/manifest.json">
+<meta name="theme-color" content="#007bff">
         body {
             font-size: 16px;
             background-color: #f5f4f0;
@@ -871,5 +873,12 @@
         displayCases();
         showPage('homePage');
     </script>
+        <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/Advocate-assistant-/sw.js')
+      .then(() => console.log('Service Worker Registered'))
+      .catch((error) => console.error('Service Worker Error:', error));
+  }
+</script>
 </body>
 </html>
