@@ -1145,7 +1145,20 @@
                 theme === 'orange' ? '#ffa500' :
                 theme === 'sky' ? '#87ceeb' :
                 theme === 'black' ? '#000000' :
-                theme === 'green' ? '#008000' : '#1a1a1a';
+         
+    function showPage(pageId) {
+        const pages = ['homePage', 'caseHistoryPage', 'caseDetailsPage', 'workbookPage', 'assistantPage', 'settingsPage'];
+        pages.forEach(p => {
+            const el = document.getElementById(p);
+            if (el) el.classList.add('hidden');
+        });
+
+        const targetPage = document.getElementById(pageId);
+        if (targetPage) targetPage.classList.remove('hidden');
+    }
+</script>
+    </script>
+               theme === 'green' ? '#008000' : '#1a1a1a';
             body.style.color = textColor;
             document.querySelectorAll('input, textarea, select').forEach(element => {
                 element.style.color = textColor;
@@ -1240,6 +1253,7 @@
         showPage('homePage');
         
             }
-    </script>
+            <script>
+                    
 </body>
 </html>
